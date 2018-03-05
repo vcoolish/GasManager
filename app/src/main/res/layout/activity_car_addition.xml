@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:layout_above="@id/edit1"
+        android:src="@drawable/car" />
+
+    <EditText
+        android:id="@+id/edit1"
+        style="@style/editadd"
+        android:layout_above="@id/edit2"
+        android:layout_toEndOf="@id/wheel"
+        android:ems="10"
+        android:hint="@string/nameedit"
+        android:imeOptions="actionNext" />
+
+    <ImageView
+        android:id="@+id/wheel"
+        style="@style/imgadd"
+        android:layout_alignTop="@id/edit1"
+        android:src="@drawable/wheel" />
+
+    <EditText
+        android:id="@+id/edit2"
+        style="@style/editadd"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_toEndOf="@id/odomtr"
+        android:ems="10"
+        android:hint="@string/odoedit"
+        android:imeOptions="actionNext"
+        android:inputType="number" />
+
+    <ImageView
+        android:id="@+id/odomtr"
+        style="@style/imgadd"
+        android:layout_alignTop="@id/edit2"
+        android:src="@drawable/odomtr" />
+
+    <EditText
+        android:id="@+id/edit3"
+        style="@style/editadd"
+        android:layout_below="@id/edit2"
+        android:layout_toEndOf="@id/oil"
+        android:ems="10"
+        android:hint="@string/oiledit"
+        android:imeOptions="actionDone"
+        android:inputType="number" />
+
+    <ImageView
+        android:id="@+id/oil"
+        style="@style/imgadd"
+        android:layout_alignTop="@+id/edit3"
+        android:src="@drawable/oil" />
+
+    <ImageView
+        android:id="@+id/addbtn"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/writebtn" />
+
+</RelativeLayout>

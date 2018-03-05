@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/mont"
+        android:text="@string/fueling"
+        android:textColor="#EDEDF5"
+        android:textSize="28dp" />
+
+    <TextView
+        android:id="@+id/volume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/liters"
+        android:layout_marginStart="50dp"
+        android:fontFamily="@font/mont"
+        android:text="@string/volume"
+        android:textColor="#75787D" />
+
+    <EditText
+        android:id="@+id/liters"
+        style="@style/editfuel"
+        android:layout_above="@id/price"
+        android:imeOptions="actionNext" />
+
+    <com.gasmanager.viacheslav.gasmanager.ScrollableNumberPicker
+        android:id="@+id/numberpicker1"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/price"
+        android:layout_marginLeft="40dp"
+        android:layout_toEndOf="@+id/miles"
+        android:alpha="0.7"
+        android:background="@drawable/number_picker_bg_color"
+        app:snp_maxValue="300"
+        app:snp_minValue="0"
+        app:snp_scrollEnabled="true"
+        app:snp_stepSize="1" />
+
+    <ImageView
+        android:id="@+id/jerrycan"
+        style="@style/imgadd"
+        android:layout_alignTop="@id/liters"
+        android:src="@drawable/jerrycan" />
+
+    <TextView
+        android:id="@+id/dollars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/money"
+        android:layout_alignStart="@+id/price"
+        android:fontFamily="@font/mont"
+        android:text="@string/price"
+        android:textColor="#75787D" />
+
+    <EditText
+        android:id="@+id/price"
+        style="@style/editfuel"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="40dp"
+        android:layout_marginTop="40dp"
+        android:imeOptions="actionNext" />
+
+    <com.gasmanager.viacheslav.gasmanager.ScrollableNumberPicker
+        android:id="@+id/numberpicker2"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/money"
+        android:layout_marginLeft="40dp"
+        android:layout_toEndOf="@+id/miles"
+        android:alpha="0.7"
+        android:background="@drawable/number_picker_bg_color"
+        app:snp_maxValue="5000"
+        app:snp_minValue="0"
+        app:snp_scrollEnabled="true"
+        app:snp_stepSize="1"
+        app:snp_updateInterval="1"
+        app:snp_value="1" />
+
+    <ImageView
+        android:id="@+id/money"
+        style="@style/imgadd"
+        android:layout_alignTop="@id/price"
+        android:src="@drawable/price" />
+
+    <TextView
+        android:id="@+id/miles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/odo"
+        android:layout_marginStart="50dp"
+        android:fontFamily="@font/mont"
+        android:text="@string/odoedit"
+        android:textColor="#75787D" />
+
+    <EditText
+        android:id="@+id/odo"
+        style="@style/editfuel"
+        android:layout_below="@id/price" />
+
+    <com.gasmanager.viacheslav.gasmanager.ScrollableNumberPicker
+        android:id="@+id/numberpicker3"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/miles"
+        android:layout_marginLeft="40dp"
+        android:layout_toEndOf="@+id/miles"
+        android:alpha="0.7"
+        android:background="@drawable/number_picker_bg_color"
+        app:snp_maxValue="999999"
+        app:snp_minValue="0"
+        app:snp_scrollEnabled="true"
+        app:snp_stepSize="1"
+        app:snp_updateInterval="1"
+        app:snp_value="0" />
+
+    <ImageView
+        android:id="@+id/odometer"
+        style="@style/imgadd"
+        android:layout_alignTop="@id/odo"
+        android:src="@drawable/odometer" />
+
+    <ImageView
+        android:id="@+id/value"
+        style="@style/imgadd"
+        android:layout_above="@id/payed"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/value" />
+
+    <TextView
+        android:id="@+id/payed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/totaltext"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:text="0"
+        android:textColor="#EDEDF5"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/totaltext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/write"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/mont"
+        android:text="@string/total"
+        android:textColor="#EDEDF5" />
+
+    <ImageView
+        android:id="@+id/write"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:src="@drawable/writebtn2" />
+
+
+</RelativeLayout>

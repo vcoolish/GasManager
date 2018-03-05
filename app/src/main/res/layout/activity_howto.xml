@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context="com.gasmanager.viacheslav.gasmanager.HowtoActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/how1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/logo" />
+
+            <TextView
+                android:id="@+id/how2"
+                style="@style/title"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/how1"
+                android:layout_marginBottom="16dp"
+                android:layout_marginStart="10dp"
+                android:drawableStart="@drawable/chart"
+                android:text="@string/howtitle1"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/how3"
+                style="@style/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/how2"
+                android:layout_marginBottom="20dp"
+                android:text="@string/how1"
+                android:textColor="#BBB" />
+
+            <TextView
+                android:id="@+id/how4"
+                style="@style/title"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/how3"
+                android:layout_marginStart="10dp"
+                android:drawableStart="@drawable/note"
+                android:text="@string/howtitle2"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/how5"
+                style="@style/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/how4"
+                android:layout_marginBottom="20dp"
+                android:text="@string/how2"
+                android:textColor="#BBB" />
+
+            <TextView
+                android:id="@+id/how6"
+                style="@style/title"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/how5"
+                android:layout_marginStart="10dp"
+                android:drawableStart="@drawable/littlecoffee"
+                android:text="@string/howtitle3"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/how7"
+                style="@style/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/how6"
+                android:text="@string/how3"
+                android:textColor="#BBB" />
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

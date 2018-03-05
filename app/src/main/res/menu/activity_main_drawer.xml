@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/cars"
+            android:fontFamily="@font/montextra"
+            android:icon="@drawable/smallcar"
+            android:title="@string/cars" />
+        <item
+            android:id="@+id/records"
+            android:fontFamily="@font/montextra"
+            android:icon="@drawable/list"
+            android:title="@string/records" />
+        <item
+            android:id="@+id/advice"
+            android:fontFamily="@font/montextra"
+            android:icon="@drawable/help"
+            android:title="@string/advicemenu" />
+        <item
+            android:id="@+id/howto"
+            android:fontFamily="@font/montextra"
+            android:icon="@drawable/how"
+            android:title="@string/howto" />
+        <item
+            android:id="@+id/about"
+            android:fontFamily="@font/montextra"
+            android:icon="@drawable/smallset"
+            android:title="@string/about" />
+    </group>
+
+    <item
+        android:fontFamily="@font/mont"
+        android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/feedback"
+                android:fontFamily="@font/montextra"
+                android:icon="@drawable/magic"
+                android:title="@string/feedback" />
+            <item
+                android:id="@+id/donate"
+                android:fontFamily="@font/montextra"
+                android:icon="@drawable/coffe"
+                android:title="@string/donate" />
+        </menu>
+    </item>
+
+</menu>

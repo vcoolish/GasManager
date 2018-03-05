@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    android:orientation="vertical"
+    tools:context="com.gasmanager.viacheslav.gasmanager.PaymentActivity">
+
+    <RelativeLayout
+        android:id="@+id/tip1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:background="@drawable/paycolor1">
+
+        <ImageView
+            android:id="@+id/milk"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/milk" />
+
+        <TextView
+            android:id="@+id/milktext"
+            style="@style/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/milk"
+            android:layout_centerHorizontal="true"
+            android:text="@string/glass" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/milktext"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="moon"
+            android:text="$0.99"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/tip2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:background="@drawable/paycolor2">
+
+        <ImageView
+            android:id="@+id/coffee"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/coffee" />
+
+        <TextView
+            android:id="@+id/coffeetext"
+            style="@style/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/coffee"
+            android:layout_centerHorizontal="true"
+            android:text="@string/cup" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/coffeetext"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="moon"
+            android:text="$1.99"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/tip3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:background="@drawable/paycolor3">
+
+        <ImageView
+            android:id="@+id/fresh"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/fresh" />
+
+        <TextView
+            android:id="@+id/freshtext"
+            style="@style/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fresh"
+            android:layout_centerHorizontal="true"
+            android:text="@string/fresh" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/freshtext"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="moon"
+            android:text="$4.99"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+
+</LinearLayout>

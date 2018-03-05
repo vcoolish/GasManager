@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/gradient"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/butSave"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/montextra"
+            android:text="@string/save" />
+
+        <Button
+            android:id="@+id/butCancel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/montextra"
+            android:text="@string/cancel" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/buttons"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montextra"
+                android:text="@string/date"
+                android:textColor="#E0E0E0"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/Date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montextra"
+                android:textColor="#E0E0E0"
+                android:textSize="30dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montextra"
+                android:text="@string/odoedit"
+                android:textColor="#E0E0E0"
+                android:textSize="30dp" />
+
+            <EditText
+                android:id="@+id/odometer"
+                style="@style/editadd"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enterkm" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montextra"
+                android:text="@string/distance"
+                android:textColor="#E0E0E0"
+                android:textSize="30dp" />
+
+            <EditText
+                android:id="@+id/distance"
+                style="@style/editadd"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enterkm" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montextra"
+                android:text="@string/volume"
+                android:textColor="#E0E0E0"
+                android:textSize="30dp" />
+
+            <EditText
+                android:id="@+id/liters"
+                style="@style/editadd"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/entervolume" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montextra"
+                android:text="@string/price"
+                android:textColor="#E0E0E0"
+                android:textSize="30dp" />
+
+            <EditText
+                android:id="@+id/price"
+                style="@style/editadd"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montextra"
+                android:text="@string/paid"
+                android:textColor="#E0E0E0"
+                android:textSize="30dp" />
+
+            <EditText
+                android:id="@+id/paid"
+                style="@style/editadd"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montextra"
+                android:text="@string/id"
+                android:textColor="#E0E0E0"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/itemid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/moon"
+                android:textColor="#E0E0E0"
+                android:textSize="30dp" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

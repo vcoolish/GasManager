@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context="com.gasmanager.viacheslav.gasmanager.AdvicePager">
+
+    <ImageView
+        android:id="@+id/illust"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/advicetitle"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/illust"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/montextra"
+        android:textAlignment="center"
+        android:textColor="#999"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/advice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/advicetitle"
+        android:fontFamily="@font/montextra"
+        android:textAlignment="center"
+        android:textColor="#E0E0E0"
+        android:textSize="18sp" />
+
+</RelativeLayout>
