@@ -26,202 +26,7 @@ import java.util.ArrayList;
 
 import io.realm.Realm;
 import io.realm.RealmResults;
-//
-//public class EntryActivity extends Activity {
-//
-//
-//    Context mContext;
-//    ListView mListView;
-//    myListAdapter mAdapter;
-//
-//    int ADD_ACTIVITY = 0;
-//    int UPDATE_ACTIVITY = 1;
-//
-//
-//    @Override
-//    public void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_entry);
-//        mContext = this;
-//        Realm.init(mContext);
-//        Realm mRealm = Realm.getDefaultInstance();
-//        ArrayList<MyData> list = new ArrayList<>();
-//        RealmResults<MyData> results = mRealm.where(MyData.class).findAll();
-//        list.addAll(mRealm.copyFromRealm(results));
-//        mListView = (ListView) findViewById(R.id.list);
-//        mAdapter = new myListAdapter(mContext, list);
-//        mListView.setAdapter(mAdapter);
-//
-//        registerForContextMenu(mListView);
-//    }
-//
-//
-//    @Override
-//    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
-//        super.onCreateContextMenu(menu, v, menuInfo);
-//        MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.context_menu, menu);
-//    }
-//
-//    @Override
-//    public boolean onContextItemSelected(MenuItem item) {
-//        AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
-//        Realm mRealm;
-//        switch (item.getItemId()) {
-//            case R.id.edit:
-//                Intent i = new Intent(mContext, EditActivity.class);
-//                Realm.init(mContext);
-//                mRealm = Realm.getDefaultInstance();
-//                MyData md = mRealm.where(MyData.class)
-//                        .equalTo("id", (int) info.id)
-//                        .findFirst();
-//                i.putExtra("MyData", md);
-//                startActivityForResult(i, UPDATE_ACTIVITY);
-//                updateList();
-//                return true;
-//            case R.id.delete:
-//                Realm.init(mContext);
-//                mRealm = Realm.getDefaultInstance();
-//                RealmResults data = mRealm.where(MyData.class).findAll();
-//                mRealm.beginTransaction();
-//                data.deleteFromRealm((int)info.id);
-//                Intent intent = getIntent();
-//                mRealm.commitTransaction();
-//                for(long k = info.id;k<data.size();k++){
-//                    MyData myID = mRealm.where(MyData.class)
-//                            .equalTo("id", k)
-//                            .findFirst();
-//                    myID.setID(k-1);
-//                }
-//                startActivity(intent);
-//                return true;
-//            default:
-//                return super.onContextItemSelected(item);
-//        }
-//    }
-//
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.main_menu, menu);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        // Handle item selection
-//        switch (item.getItemId()) {
-//            case R.id.add:
-//                Intent k = new Intent(mContext, EditActivity.class);
-//                startActivityForResult(k, ADD_ACTIVITY);
-//                updateList();
-//                return true;
-//            case R.id.deleteAll:
-//                Realm.init(mContext);
-//                Realm mRealm = Realm.getDefaultInstance();
-//                mRealm.beginTransaction();
-//                mRealm.deleteAll();
-//                MyData md0 = new MyData(0, new Date().getTime(), 0, 0, 0, 0, 0);
-//                mRealm.insert(md0);
-//                MyData md = new MyData(1, new Date().getTime(), 0, 0, 0, 0, 0);
-//                mRealm.insert(md);
-//                mRealm.commitTransaction();
-//                updateList();
-//                return true;
-//            case R.id.exit:
-//                finish();
-//                return true;
-//            default:
-//                return super.onOptionsItemSelected(item);
-//        }
-//    }
-//
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//
-//        if (resultCode == Activity.RESULT_OK) {
-//            MyData md = (MyData) data.getExtras().getSerializable("MyData");
-//            Realm.init(mContext);
-//            Realm mRealm = Realm.getDefaultInstance();
-//            mRealm.beginTransaction();
-//            if (requestCode == UPDATE_ACTIVITY)
-//                mRealm.copyToRealmOrUpdate(md);
-//            else{
-//                mRealm.insert(md);}
-//            mRealm.commitTransaction();
-//            updateList();
-//        }
-//    }
-//
-//    private void updateList() {
-//        Realm.init(mContext);
-//        Realm mRealm = Realm.getDefaultInstance();
-//        ArrayList<MyData> list = new ArrayList<>();
-//        RealmResults<MyData> results = mRealm.where(MyData.class).findAll();
-//        list.addAll(mRealm.copyFromRealm(results));
-//        mAdapter.setArrayMyData(list);
-//        mAdapter.notifyDataSetChanged();
-//    }
-//
-//    class myListAdapter extends BaseAdapter {
-//        private LayoutInflater mLayoutInflater;
-//        private ArrayList<MyData> arrayMyData;
-//
-//        public myListAdapter(Context ctx,ArrayList<MyData> arr) {
-//            mLayoutInflater = LayoutInflater.from(ctx);
-//            setArrayMyData(arr);
-//        }
-//
-//        public ArrayList<MyData> getArrayMyData() {
-//            return arrayMyData;
-//        }
-//
-//        public void setArrayMyData(ArrayList<MyData> arrayMyData) {
-//            this.arrayMyData = arrayMyData;
-//        }
-//
-//        public int getCount() {
-//            return arrayMyData.size();
-//
-//        }
-//
-//        public Object getItem(int position) {
-//
-//            return position;
-//        }
-//
-//        public long getItemId(int position) {
-//            MyData md = arrayMyData.get(position);
-//            if (md != null) {
-//                return md.getID()+1;
-//            }
-//            return 0;
-//        }
-//
-//        public View getView(int position, View convertView, ViewGroup parent) {
-//
-//
-//            if (convertView == null)
-//                convertView = mLayoutInflater.inflate(R.layout.item, null);
-//
-//
-//            TextView vDate = (TextView) convertView.findViewById(R.id.Date);
-//            TextView vOdo = (TextView) convertView.findViewById(R.id.odo);
-//            TextView vLiters = (TextView) convertView.findViewById(R.id.liters);
-//            TextView vPrice = (TextView) convertView.findViewById(R.id.price);
-//
-//            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-//
-//            MyData md = arrayMyData.get(position);
-//            vDate.setText(dateFormat.format(md.getDate()));
-//            vOdo.setText(String.valueOf(md.getOdometer())+"km");
-//            vLiters.setText(String.valueOf(md.getLiters())+"l");
-//            vPrice.setText("$"+String.valueOf(md.getPrice()));
-//
-//            return convertView;
-//        }
-//    }
-//}
+
 
 public class EntryActivity extends Activity {
 
@@ -246,7 +51,7 @@ public class EntryActivity extends Activity {
         RealmResults<MyData> results = mRealm.where(MyData.class).findAll();
         list.addAll(mRealm.copyFromRealm(results));
 
-        mListView = (ListView) findViewById(R.id.list);
+        mListView = findViewById(R.id.list);
         mAdapter = new myListAdapter(mContext, list);
         mListView.setAdapter(mAdapter);
 
@@ -379,7 +184,7 @@ public class EntryActivity extends Activity {
         private LayoutInflater mLayoutInflater;
         private ArrayList<MyData> arrayMyData;
 
-        public myListAdapter(Context ctx, ArrayList<MyData> arr) {
+        private myListAdapter(Context ctx, ArrayList<MyData> arr) {
             mLayoutInflater = LayoutInflater.from(ctx);
             setArrayMyData(arr);
         }
@@ -388,7 +193,7 @@ public class EntryActivity extends Activity {
             return arrayMyData;
         }
 
-        public void setArrayMyData(ArrayList<MyData> arrayMyData) {
+        private void setArrayMyData(ArrayList<MyData> arrayMyData) {
             this.arrayMyData = arrayMyData;
         }
 
@@ -415,18 +220,18 @@ public class EntryActivity extends Activity {
                 convertView = mLayoutInflater.inflate(R.layout.item, null);
 
 
-            TextView vDate = (TextView) convertView.findViewById(R.id.Date);
-            TextView vOdo = (TextView) convertView.findViewById(R.id.odo);
-            TextView vLiters = (TextView) convertView.findViewById(R.id.liters);
-            TextView vPrice = (TextView) convertView.findViewById(R.id.price);
+            TextView vDate = convertView.findViewById(R.id.Date);
+            TextView vOdo = convertView.findViewById(R.id.odo);
+            TextView vLiters = convertView.findViewById(R.id.liters);
+            TextView vPrice = convertView.findViewById(R.id.price);
 
             SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
             MyData md = arrayMyData.get(position);
             vDate.setText(dateFormat.format(md.getDate()));
-            vOdo.setText(getResources().getText(R.string.odoedit) + ": " + String.valueOf(md.getOdometer()) + getResources().getText(R.string.km).toString());
-            vLiters.setText(getResources().getText(R.string.volume) + ": " + String.valueOf(md.getLiters()) + getResources().getText(R.string.l).toString());
-            vPrice.setText(getResources().getText(R.string.price).toString() + ":" + getResources().getText(R.string.currency).toString() + String.valueOf(md.getPrice()) + getResources().getText(R.string.currencyru).toString());
+            vOdo.setText(getResources().getString(R.string.odoedit) + ": " + String.valueOf(md.getOdometer()) + getResources().getString(R.string.km));
+            vLiters.setText(getResources().getString(R.string.volume) + ": " + String.valueOf(md.getLiters()) + getResources().getString(R.string.l));
+            vPrice.setText(getResources().getString(R.string.price) + ":" + getResources().getText(R.string.currency).toString() + String.valueOf(md.getPrice()) + getResources().getString(R.string.currencyru));
 
             return convertView;
         }

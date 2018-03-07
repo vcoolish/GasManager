@@ -14,7 +14,6 @@ class CarAddition : AppCompatActivity() {
 
     val MY_SETTINGS = "my_settings"
     val MY_CAR = "MY_CAR"
-    private var MyDataID: Long = 1
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

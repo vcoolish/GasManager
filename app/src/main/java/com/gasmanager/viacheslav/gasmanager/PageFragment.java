@@ -33,7 +33,7 @@ public class PageFragment extends Fragment {
     double[] values4;
     ArrayList<double[]> barValues;
     int[] bgcolor = {R.drawable.progresscolor1, R.drawable.progresscolor2, R.drawable.progresscolor3, R.drawable.progresscolor4};
-    private Context context;
+    Context context;
 
     static PageFragment newInstance(int page) {
         PageFragment pageFragment = new PageFragment();
@@ -78,8 +78,8 @@ public class PageFragment extends Fragment {
         CharSequence[] monthname = {getResources().getText(R.string.mon1), getResources().getText(R.string.mon2), getResources().getText(R.string.mon3), getResources().getText(R.string.mon4), getResources().getText(R.string.mon5), getResources().getText(R.string.mon6), getResources().getText(R.string.mon7), getResources().getText(R.string.mon8), getResources().getText(R.string.mon9), getResources().getText(R.string.mon10), getResources().getText(R.string.mon11), getResources().getText(R.string.mon12)};
         double[] data1 = {0.0, 0.0, 0.0, 0.0};
         double[] data2 = {0.0, 0.0, 0.0, 0.0};
-        String[] infos1 = {data1[pageNumber] + getResources().getText(R.string.lkm).toString(), data1[pageNumber] + getResources().getText(R.string.km).toString(), data1[pageNumber] + "", getResources().getText(R.string.currency).toString() + data1[pageNumber]};
-        String[] infos2 = {data2[pageNumber] + getResources().getText(R.string.lkm).toString(), data2[pageNumber] + getResources().getText(R.string.km).toString(), data2[pageNumber] + "", getResources().getText(R.string.currency).toString() + data2[pageNumber] + getResources().getText(R.string.currencyru).toString()};
+        String[] infos1 = {data1[pageNumber] + getResources().getString(R.string.lkm), data1[pageNumber] + getResources().getString(R.string.km), data1[pageNumber] + "", getResources().getString(R.string.currency) + data1[pageNumber]};
+        String[] infos2 = {data2[pageNumber] + getResources().getString(R.string.lkm), data2[pageNumber] + getResources().getString(R.string.km), data2[pageNumber] + "", getResources().getString(R.string.currency) + data2[pageNumber] + getResources().getText(R.string.currencyru).toString()};
         int[] images1 = {R.drawable.jerrycangray, R.drawable.distance, R.drawable.jerrycangray, R.drawable.money};
         int[] images2 = {R.drawable.fuelinggray, R.drawable.month, R.drawable.month, R.drawable.coins};
 
@@ -90,24 +90,24 @@ public class PageFragment extends Fragment {
         RealmResults<MyData> mdarr = mRealm.where(MyData.class).findAll();
 
 
-        TextView info1 = (TextView) view.findViewById(R.id.info1);
-        TextView title1 = (TextView) view.findViewById(R.id.title1);
-        TextView info2 = (TextView) view.findViewById(R.id.info2);
-        TextView title2 = (TextView) view.findViewById(R.id.title2);
+        TextView info1 =  view.findViewById(R.id.info1);
+        TextView title1 =  view.findViewById(R.id.title1);
+        TextView info2 =  view.findViewById(R.id.info2);
+        TextView title2 =  view.findViewById(R.id.title2);
         TextView indata = view.findViewById(R.id.indata);
 
-        TextView month1 = (TextView) view.findViewById(R.id.month1);
-        TextView month2 = (TextView) view.findViewById(R.id.month2);
-        TextView month3 = (TextView) view.findViewById(R.id.month3);
-        TextView month4 = (TextView) view.findViewById(R.id.month4);
-        TextView month5 = (TextView) view.findViewById(R.id.month5);
-        TextView month6 = (TextView) view.findViewById(R.id.month6);
-        TextView month7 = (TextView) view.findViewById(R.id.month7);
-        TextView month8 = (TextView) view.findViewById(R.id.month8);
-        TextView month9 = (TextView) view.findViewById(R.id.month9);
-        TextView month10 = (TextView) view.findViewById(R.id.month10);
-        TextView month11 = (TextView) view.findViewById(R.id.month11);
-        TextView month12 = (TextView) view.findViewById(R.id.month12);
+        TextView month1 =  view.findViewById(R.id.month1);
+        TextView month2 =  view.findViewById(R.id.month2);
+        TextView month3 =  view.findViewById(R.id.month3);
+        TextView month4 =  view.findViewById(R.id.month4);
+        TextView month5 =  view.findViewById(R.id.month5);
+        TextView month6 =  view.findViewById(R.id.month6);
+        TextView month7 =  view.findViewById(R.id.month7);
+        TextView month8 =  view.findViewById(R.id.month8);
+        TextView month9 =  view.findViewById(R.id.month9);
+        TextView month10 =  view.findViewById(R.id.month10);
+        TextView month11 =  view.findViewById(R.id.month11);
+        TextView month12 =  view.findViewById(R.id.month12);
 
         View bar1 = view.findViewById(R.id.bar1);
         View bar2 = view.findViewById(R.id.bar2);
@@ -336,14 +336,14 @@ public class PageFragment extends Fragment {
             data2[3] = Double.parseDouble(new DecimalFormat("#0.00").format(dayCost).replace(",", "."));
         }
 
-        infos1[0] = data1[pageNumber] + getResources().getText(R.string.lkm).toString();
-        infos2[0] = data2[pageNumber] + getResources().getText(R.string.lkm).toString();
-        infos1[1] = data1[pageNumber] + getResources().getText(R.string.km).toString();
-        infos2[1] = data2[pageNumber] + getResources().getText(R.string.km).toString();
-        infos1[2] = data1[pageNumber] + getResources().getText(R.string.l).toString();
-        infos2[2] = data2[pageNumber] + getResources().getText(R.string.l).toString();
-        infos1[3] = getResources().getText(R.string.currency).toString() + data1[pageNumber] + getResources().getText(R.string.currencyru).toString();
-        infos2[3] = getResources().getText(R.string.currency).toString() + data2[pageNumber] + getResources().getText(R.string.currencyru).toString();
+        infos1[0] = data1[pageNumber] + getResources().getString(R.string.lkm);
+        infos2[0] = data2[pageNumber] + getResources().getString(R.string.lkm);
+        infos1[1] = data1[pageNumber] + getResources().getString(R.string.km);
+        infos2[1] = data2[pageNumber] + getResources().getString(R.string.km);
+        infos1[2] = data1[pageNumber] + getResources().getString(R.string.l);
+        infos2[2] = data2[pageNumber] + getResources().getString(R.string.l);
+        infos1[3] = getResources().getString(R.string.currency) + data1[pageNumber] + getResources().getString(R.string.currencyru);
+        infos2[3] = getResources().getString(R.string.currency) + data2[pageNumber] + getResources().getString(R.string.currencyru);
 
         info1.setText(String.valueOf(infos1[pageNumber]));
         info2.setText(String.valueOf(infos2[pageNumber]));
